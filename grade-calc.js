@@ -3,6 +3,9 @@
 // A 90-100, B 80-89 ,C 70-79, D 60-69, F 0-59
 
 let grade = function(studentScore,TotalScore){
+    if (typeof studentScore !== 'numbre' || typeof TotalScore !== 'number') {
+        throw Error('Please enter valid number values')
+    }
     let per = (studentScore / TotalScore) * 100;
     if(per >= 90 && per <= 100){
         return `${studentScore}/${TotalScore} -> You Got a A(${per}%)!`
@@ -14,14 +17,16 @@ let grade = function(studentScore,TotalScore){
         return `${studentScore}/${TotalScore} -> You Got a D(${per}%)!`
     }else if(per >= 0 && per <= 59){
         return `${studentScore}/${TotalScore} -> You Got a F(${per}%)!`
-    } else {
-        return 'Please enter valid score values'
-    }
+    } 
 }
 
+try{
 let g1 = grade(90, 100);
 console.log( g1 );
 console.log('-------------------------------------');
-let g2 = grade(45, 100);
+let g2 = grade(45, 10);
 console.log(g2);
 console.log('-------------------------------------');
+} catch (e) {
+    console.log(e.message);
+}
