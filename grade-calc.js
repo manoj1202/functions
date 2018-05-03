@@ -16,8 +16,8 @@ let grade = function(studentScore,TotalScore){
     } else if (per >= 60 && per < 70) {
         return `${studentScore}/${TotalScore} -> You Got a D(${per}%)!`
     }else if(per >= 0 && per <= 59){
-        return `${studentScore}/${TotalScore} -> You Got a F(${per}%)!`
-    } 
+         return `${studentScore}/${TotalScore} -> You Got a F(${per}%)!`
+    }  
 }
 
 try{
